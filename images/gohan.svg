@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+  <!-- Background -->
+  <rect width="200" height="300" fill="#87CEEB"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="60" r="35" fill="#F4A460"/>
+  
+  <!-- Hair (Gohan style) -->
+  <path d="M 65 35 Q 60 10 100 5 Q 140 10 135 35 L 130 50 Q 100 60 70 50" fill="#1a1a1a"/>
+  
+  <!-- Face -->
+  <circle cx="90" cy="55" r="4" fill="#000"/>
+  <circle cx="110" cy="55" r="4" fill="#000"/>
+  
+  <!-- Serious mouth -->
+  <line x1="95" y1="72" x2="105" y2="72" stroke="#000" stroke-width="1.5"/>
+  
+  <!-- Body (Gi - training outfit) -->
+  <rect x="80" y="95" width="40" height="60" rx="5" fill="#8B4513"/>
+  
+  <!-- Arms -->
+  <rect x="45" y="100" width="35" height="15" rx="7" fill="#F4A460"/>
+  <rect x="120" y="100" width="35" height="15" rx="7" fill="#F4A460"/>
+  
+  <!-- Legs -->
+  <rect x="85" y="155" width="12" height="50" fill="#696969"/>
+  <rect x="103" y="155" width="12" height="50" fill="#696969"/>
+  
+  <!-- Shoes -->
+  <ellipse cx="91" cy="208" rx="10" ry="6" fill="#FFD700"/>
+  <ellipse cx="109" cy="208" rx="10" ry="6" fill="#FFD700"/>
+</svg>
