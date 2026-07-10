@@ -1,3 +1,5 @@
+
+// Base de datos de personajes Dragon Ball Z
 // Base de datos de personajes Dragon Ball Z
 export const characters = [
     {
@@ -10,7 +12,7 @@ export const characters = [
         powerLevel: "Infinito",
         powerLevelNumeric: 10000,
         description: "El protagonista principal, Saiyan criado como humano. Es el guerrero más fuerte de la Tierra.",
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%23FF9500' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3ESon Goku%3C/text%3E%3C/svg%3E",
+        image: "https://images.wikimizer.com/fandom/goku-dragon-ball.png",
         transformations: ["Super Saiyan", "Super Saiyan 2", "Super Saiyan 3", "Super Saiyan Blue", "Ultra Instinto"],
         attacks: ["Kamehameha", "Genkidama", "Kaio-ken", "Spirit Bomb"],
         favorites: false,
@@ -26,7 +28,7 @@ export const characters = [
         powerLevel: "Muy Alto",
         powerLevelNumeric: 8000,
         description: "Príncipe Saiyan, rival de Goku. Eventualmente se convierte en aliado.",
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%234B5FBF' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EVegeta%3C/text%3E%3C/svg%3E",
+        image: "https://images.wikimizer.com/fandom/vegeta-dragon-ball.png",
         transformations: ["Super Saiyan", "Super Saiyan 2", "Super Saiyan Blue", "Ultra Ego"],
         attacks: ["Galick Gun", "Big Bang Attack", "Final Flash"],
         favorites: false,
@@ -42,7 +44,7 @@ export const characters = [
         powerLevel: "Alto",
         powerLevelNumeric: 5000,
         description: "Guerrero Namekiano que comienza como enemigo de Goku pero se convierte en su amigo.",
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%2322C55E' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EPiccolo%3C/text%3E%3C/svg%3E",
+        image: "https://images.wikimizer.com/fandom/piccolo-dragon-ball.png",
         transformations: ["Namekian Giant"],
         attacks: ["Makankosappo", "Hellzone Grenade", "Light Grenade"],
         favorites: false,
@@ -58,7 +60,7 @@ export const characters = [
         powerLevel: "Moderado",
         powerLevelNumeric: 2000,
         description: "Mejor amigo de Goku y compañero de entrenamiento. Humano pero increíblemente fuerte.",
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%236366F1' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EKrillin%3C/text%3E%3C/svg%3E",
+        image: "https://images.wikimizer.com/fandom/krilin-dragon-ball.png",
         transformations: [],
         attacks: ["Kamehameha", "Destructo Disc", "Solar Flare"],
         favorites: false,
@@ -74,7 +76,7 @@ export const characters = [
         powerLevel: "Muy Alto",
         powerLevelNumeric: 7500,
         description: "Hijo de Goku. Guerrero excepcional con poder latente tremendo.",
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%23F59E0B' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EGohan%3C/text%3E%3C/svg%3E",
+        image: "https://images.wikimizer.com/fandom/gohan-dragon-ball.png",
         transformations: ["Super Saiyan", "Super Saiyan 2", "Super Saiyan Ultimate"],
         attacks: ["Masenko", "Kamehameha", "Father-Son Kamehameha"],
         favorites: false,
