@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z Universe - SPA</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-orange: #ff9500;
+            --primary-blue: #2563eb;
+            --primary-yellow: #fbbf24;
+            --dark-bg: #0f172a;
+            --dark-surface: #1e293b;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: #e2e8f0;
+        }
+
+        body.light-mode {
+            background-color: var(--light-bg);
+            color: #1e293b;
+        }
+
+        /* Skeleton Loader */
+        .skeleton {
+            background: linear-gradient(90deg, #cbd5e1 25%, #e2e8f0 50%, #cbd5e1 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .dark-mode .skeleton {
+            background: linear-gradient(90deg, #475569 25%, #64748b 50%, #475569 75%);
+            background-size: 200% 100%;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .shake {
+            animation: shake 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 149, 0, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 149, 0, 0.6); }
+        }
+
+        .glow-effect {
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Card Hover Effects */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.2);
+        }
+
+        .dark-mode .card-hover:hover {
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.3);
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-orange), var(--primary-yellow));
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 149, 0, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #1d4ed8;
+        }
+
+        /* Loading Spinner */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Toast Notification */
+        .toast {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Navigation Active State */
+        .nav-link.active {
+            border-bottom: 3px solid var(--primary-orange);
+            color: var(--primary-orange);
+        }
+
+        /* Battle Screen */
+        .hp-bar {
+            transition: width 0.5s ease;
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+
+        .character-image {
+            filter: drop-shadow(0 0 20px rgba(255, 149, 0, 0.4));
+            transition: filter 0.3s ease;
+        }
+
+        .character-image:hover {
+            filter: drop-shadow(0 0 30px rgba(255, 149, 0, 0.8));
+        }
+
+        /* Modal Backdrop */
+        .modal-backdrop {
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        .dark-mode ::-webkit-scrollbar-track {
+            background: var(--dark-surface);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-orange);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-yellow);
+        }
+
+        /* Pagination */
+        .pagination-item.active {
+            background: var(--primary-orange);
+            color: white;
+        }
+
+        /* Search Input Focus */
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.1);
+        }
+
+        .dark-mode input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 149, 0, 0.2);
+        }
+
+        /* Badge Colors */
+        .badge-saiyan {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: var(--primary-yellow);
+        }
+
+        .badge-human {
+            background-color: rgba(37, 99, 235, 0.2);
+            color: var(--primary-blue);
+        }
+
+        .badge-namek {
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .badge-android {
+            background-color: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+        }
+
+        .badge-god {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- App Root -->
+    <div id="app" class="min-h-screen">
+        <!-- Navbar -->
+        <nav id="navbar" class="sticky top-0 z-50 bg-white dark-mode:bg-slate-800 shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-2 cursor-pointer" id="logo-link">
+                        <i class="fas fa-dragon text-2xl" style="color: var(--primary-orange);"></i>
+                        <span class="font-bold text-xl hidden sm:inline">DBZ Universe</span>
+                    </div>
+
+                    <!-- Nav Links -->
+                    <div class="hidden md:flex gap-8 items-center">
+                        <a href="#/home" class="nav-link text-gray-700 dark-mode:text-gray-300 hover:text-orange-500 transition">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                        <a href="#/team" class="nav-link text-gray-700 dark-mode:text-gray-300 hover:text-orange-500 transition">
+                            <i class="fas fa-users"></i> Mi Equipo
+                        </a>
+                        <a href="#/favorites" class="nav-link text-gray-700 dark-mode:text-gray-300 hover:text-orange-500 transition">
+                            <i class="fas fa-star"></i> Favoritos
+                        </a>
+                        <a href="#/battle" class="nav-link text-gray-700 dark-mode:text-gray-300 hover:text-orange-500 transition">
+                            <i class="fas fa-fist-raised"></i> Batalla
+                        </a>
+                    </div>
+
+                    <!-- Theme Toggle & Mobile Menu -->
+                    <div class="flex items-center gap-4">
+                        <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark-mode:hover:bg-slate-700 transition" title="Cambiar tema">
+                            <i class="fas fa-moon text-xl text-gray-700 dark-mode:text-gray-300"></i>
+                        </button>
+                        <button id="mobile-menu-btn" class="md:hidden p-2">
+                            <i class="fas fa-bars text-xl text-gray-700 dark-mode:text-gray-300"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-200 dark-mode:border-slate-700">
+                    <a href="#/home" class="block py-2 text-gray-700 dark-mode:text-gray-300 hover:text-orange-500">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="#/team" class="block py-2 text-gray-700 dark-mode:text-gray-300 hover:text-orange-500">
+                        <i class="fas fa-users"></i> Mi Equipo
+                    </a>
+                    <a href="#/favorites" class="block py-2 text-gray-700 dark-mode:text-gray-300 hover:text-orange-500">
+                        <i class="fas fa-star"></i> Favoritos
+                    </a>
+                    <a href="#/battle" class="block py-2 text-gray-700 dark-mode:text-gray-300 hover:text-orange-500">
+                        <i class="fas fa-fist-raised"></i> Batalla
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="view-container" class="min-h-[calc(100vh-64px)]">
+            <!-- Views will be rendered here -->
+        </main>
+
+        <!-- Toast Container -->
+        <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
+
+        <!-- Modal Container -->
+        <div id="modal-container"></div>
+    </div>
+
+    <!-- App Scripts -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
